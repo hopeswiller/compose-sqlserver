@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    container_name: sqlserver
+    restart: on-failure
+    env_file: 
+      - ./config/sqlserver_database.env
+    ports:
+      - "1433:1433"
